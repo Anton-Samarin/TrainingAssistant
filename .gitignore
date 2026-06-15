@@ -22,6 +22,7 @@ appsettings.*.local.json
 secrets.json
 
 # --- .NET (TrainingAssistant.Api) ---
+**/uploads/
 **/bin/
 **/obj/
 **/[Ll]og/
