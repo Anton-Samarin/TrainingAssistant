@@ -1,5 +1,3 @@
-"""Feature extraction shared by training and inference."""
-
 from __future__ import annotations
 
 from typing import Any
@@ -31,7 +29,6 @@ LABEL_COLUMN = "program_type"
 
 
 def profile_to_row(profile: dict[str, Any]) -> dict[str, Any]:
-    """Normalize API/dataset dict and ensure BMI exists."""
     row = {col: profile.get(col) for col in FEATURE_COLUMNS}
     if row["bmi"] is None and row["weight_kg"] and row["height_cm"]:
         h_m = float(row["height_cm"]) / 100

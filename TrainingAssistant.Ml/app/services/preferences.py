@@ -1,5 +1,3 @@
-"""Apply user exercise swap preferences when building a week."""
-
 from __future__ import annotations
 
 from app.schemas.training import ExerciseItem, ExercisePreference

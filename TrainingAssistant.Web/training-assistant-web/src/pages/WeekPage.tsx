@@ -56,7 +56,6 @@ export function WeekPage() {
       const data = await getCurrentWeek();
       setPlan(data);
     } catch {
-      /* keep current plan */
     }
   }, []);
 

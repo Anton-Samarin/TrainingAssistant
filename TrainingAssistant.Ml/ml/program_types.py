@@ -1,5 +1,3 @@
-"""Program type labels used as ML targets and template keys."""
-
 GOAL_LOSE_WEIGHT = 0
 GOAL_GAIN_MUSCLE = 1
 GOAL_MAINTAIN = 2

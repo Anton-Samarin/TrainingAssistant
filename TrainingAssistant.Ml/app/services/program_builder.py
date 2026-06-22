@@ -1,5 +1,3 @@
-"""Build a 7-day training week from predicted program type and user constraints."""
-
 from __future__ import annotations
 
 import re
@@ -17,7 +15,6 @@ DAY_NAMES = [
     "Воскресенье",
 ]
 
-# (name, equipment tag, blocked by injury)
 EXERCISE_POOL = {
     "upper": [
         ("Отжимания", "mat", ("back",)),

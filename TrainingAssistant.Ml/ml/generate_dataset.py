@@ -1,10 +1,3 @@
-"""
-Synthetic training dataset for program-type classification.
-
-Each row: user profile features -> program_type (expert rules).
-Run: python -m ml.generate_dataset [--rows 8000] [--output data/training_dataset.csv]
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -94,7 +87,6 @@ def assign_program_type(row: dict) -> str:
             return "adv_strength_gym_5x"
         return "adv_muscle_gym_5x"
 
-    # maintain
     if level == LEVEL_BEGINNER:
         if home:
             return "beg_maintain_home_2x" if sessions <= 2 else "beg_maintain_home_3x"
@@ -186,8 +178,8 @@ def generate_dataset(rows: int, seed: int = RANDOM_SEED) -> pd.DataFrame:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate synthetic training dataset.")
-    parser.add_argument("--rows", type=int, default=8000, help="Number of samples (default: 8000)")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rows", type=int, default=8000)
     parser.add_argument(
         "--output",
         type=Path,

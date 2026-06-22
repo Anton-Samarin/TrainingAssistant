@@ -1,5 +1,3 @@
-"""Post-processing program type for elevated BMI."""
-
 from __future__ import annotations
 
 from app.schemas.training import GenerateWeekRequest, Goal

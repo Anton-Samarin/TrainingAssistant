@@ -1,11 +1,3 @@
-"""
-Train program-type classifier and save artifact for FastAPI.
-
-Run from TrainingAssistant.Ml:
-  python -m ml.train
-  python -m ml.train --data data/training_dataset.csv --output artifacts/program_classifier.pkl
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -95,7 +87,7 @@ def train_model(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train program type classifier.")
+    parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data",
         type=Path,

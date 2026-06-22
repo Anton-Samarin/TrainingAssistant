@@ -14,7 +14,6 @@ import './index.css';
           : 'light';
     document.documentElement.setAttribute('data-theme', theme);
   } catch {
-    /* ignore */
   }
 })();
 

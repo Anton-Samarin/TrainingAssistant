@@ -8,11 +8,19 @@ export function Layout() {
 
   return (
     <div className="shell">
-      <header className="top">
-        <Link to="/" className="brand">
-          Training<span>Assistant</span>
-        </Link>
-        <nav className="nav">
+      <aside className="sidebar">
+        <div className="sidebar-head">
+          <Link to="/" className="brand">
+            Training<span>Assistant</span>
+          </Link>
+          <div className="top-meta">
+            <div className="user-badge">
+              <span className="user-badge-name">Привет, {who}</span>
+              {email ? <span className="email">{email}</span> : null}
+            </div>
+          </div>
+        </div>
+        <nav className="nav" aria-label="Основная навигация">
           <NavLink to="/" end>
             Неделя
           </NavLink>
@@ -21,19 +29,15 @@ export function Layout() {
           <NavLink to="/profile">Профиль</NavLink>
           <NavLink to="/settings">Настройки</NavLink>
         </nav>
-        <div className="top-meta">
-          <div className="user-badge">
-            <span className="user-badge-name">Привет, {who}</span>
-            {email ? <span className="email">{email}</span> : null}
-          </div>
-          <button type="button" className="btn-text" onClick={logout}>
-            Выйти
-          </button>
-        </div>
-      </header>
-      <main className="main">
-        <Outlet />
-      </main>
+        <button type="button" className="btn-text sidebar-logout" onClick={logout}>
+          Выйти
+        </button>
+      </aside>
+      <div className="content-shell">
+        <main className="main">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }

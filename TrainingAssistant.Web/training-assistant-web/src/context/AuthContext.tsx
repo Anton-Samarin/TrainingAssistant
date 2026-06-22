@@ -77,7 +77,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           });
         }
       } catch {
-        /* ignore */
       }
     })();
     return () => {

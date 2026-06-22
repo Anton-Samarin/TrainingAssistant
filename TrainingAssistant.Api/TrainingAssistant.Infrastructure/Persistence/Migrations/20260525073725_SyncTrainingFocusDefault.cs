@@ -19,8 +19,7 @@ namespace TrainingAssistant.Infrastructure.Persistence.Migrations
                 oldClrType: typeof(int),
                 oldType: "integer");
 
-            // Профили, созданные до defaultValue=2, получили 0 (Strength) при AddPlanEnhancements
-            migrationBuilder.Sql(
+        migrationBuilder.Sql(
                 """UPDATE "UserProfiles" SET "TrainingFocus" = 2 WHERE "TrainingFocus" = 0;""");
         }
 

@@ -111,24 +111,31 @@ p {
   color: var(--muted);
 }
 
-/* shell */
 .shell {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
 }
 
-.top {
+.sidebar {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--line);
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 240px;
+  min-height: 100vh;
+  padding: 1.25rem;
+  border-right: 1px solid var(--line);
   background: var(--top-bg);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.sidebar-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .brand {
@@ -147,16 +154,16 @@ p {
 
 .nav {
   display: flex;
-  gap: 0.5rem;
-  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--muted);
   font-size: 0.9rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
   transition: background 0.15s, color 0.15s;
 }
 
@@ -176,6 +183,11 @@ p {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
+}
+
+.sidebar-logout {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .theme-toggle {
@@ -205,7 +217,7 @@ p {
 .user-badge {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 0.1rem;
 }
 
@@ -217,11 +229,16 @@ p {
 
 .email {
   color: var(--muted);
-  max-width: 180px;
+  max-width: 190px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 0.78rem;
+}
+
+.content-shell {
+  flex: 1;
+  min-width: 0;
 }
 
 .main {
@@ -232,7 +249,6 @@ p {
   padding: 2rem 1.5rem 3rem;
 }
 
-/* auth */
 .auth {
   min-height: 100vh;
   display: grid;
@@ -265,7 +281,6 @@ p {
   font-weight: 500;
 }
 
-/* form */
 .form {
   display: flex;
   flex-direction: column;
@@ -354,7 +369,6 @@ select.input option:checked {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* activity */
 .activity-select {
   display: flex;
   flex-direction: column;
@@ -519,7 +533,6 @@ select.input option:checked {
   background: var(--accent-soft);
 }
 
-/* week */
 .week-head-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1411,13 +1424,40 @@ select.input option:checked {
     display: none;
   }
 
-  .top {
-    flex-wrap: wrap;
+  .shell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sidebar {
+    width: auto;
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    gap: 0.85rem;
+    padding: 1rem;
   }
 
   .nav {
-    order: 3;
-    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.15rem;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .sidebar-logout {
+    margin-top: 0;
   }
 
   .columns {
